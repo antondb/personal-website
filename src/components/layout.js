@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Header from "../components/header"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -11,6 +12,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h1
         style={{
+          fontFamily: `Libre Caslon Text`,
           ...scale(1.5),
           marginBottom: rhythm(1.5),
           marginTop: 0,
@@ -31,7 +33,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
+          fontFamily: `Libre Caslon Text`,
           marginTop: 0,
         }}
       >
@@ -50,13 +52,9 @@ const Layout = ({ location, title, children }) => {
   return (
     <div
       style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <Header style={{backgroundColor:'#81b29a'}}>{header}</Header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
