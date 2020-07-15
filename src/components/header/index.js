@@ -1,5 +1,7 @@
 import React from "react"
-import headerStyle from './header.module.css'
+//import headerStyle from './header.module.css'
+
+import headerStyle from '../container/container.module.css'
 console.log(headerStyle)
 const Header = ({ location, children }) => {
 

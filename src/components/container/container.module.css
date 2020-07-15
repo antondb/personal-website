@@ -1,0 +1,37 @@
+@value var: "../../variables.module.css";
+@value sm, md, lg, xl, xx from var;
+
+.container {
+  margin: 0 auto;
+  padding:4em 0em;
+}
+
+@media (min-width: sm) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: md) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: lg) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: xl) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: xx) {
+  .container {
+    max-width: 1000px;
+  }
+}
