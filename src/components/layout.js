@@ -15,8 +15,8 @@ const Layout = ({ location, title, children }) => {
       <h1
         style={{
           fontFamily: `Libre Caslon Text`,
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
+          fontSize:'3.5em',
+          marginBottom: '0.25em',
           marginTop: 0,
         }}
       >
@@ -30,7 +30,7 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Link>
       </h1>
-      <p>
+      <p style={{fontSize:'1.25em'}}>
       
       A handbook on the things I would have otherwise forgotten.
       </p>

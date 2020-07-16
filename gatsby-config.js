@@ -85,6 +85,7 @@ module.exports = {
         fonts: [
           {
             family: `Libre Caslon Text`,
+            variants: [`400`, `700`],
             subsets: [`latin`],
           },
         ],
