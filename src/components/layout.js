@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import Header from "../components/header"
+import Nav from "../components/nav"
+import Footer from "../components/footer"
 
-import containerStyle from './container/container.module.css'
+import containerStyle from "./container/container.module.css"
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -19,16 +21,8 @@ const Layout = ({ location, title, children }) => {
           marginBottom: '0.25em',
           marginTop: 0,
         }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
         >
           {title}
-        </Link>
       </h1>
       <p style={{fontSize:'1.25em'}}>
       
@@ -57,18 +51,16 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-      }}
-    >
-      <Header style={{backgroundColor:'#81b29a'}}>{header}</Header>
+    <>
+    <Nav/>
+      <Header style={{ backgroundColor: "#81b29a" }}>{header}</Header>
       <main className={containerStyle.container}>{children}</main>
-      <footer>
+      <Footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
+      </Footer>
+    </>
   )
 }
 
