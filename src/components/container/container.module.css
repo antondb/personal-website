@@ -3,7 +3,7 @@
 
 .container {
   margin: 0 auto;
-  padding:4em 0em;
+  padding: 4em 1em;
 }
 
 @media (min-width: sm) {
@@ -34,4 +34,9 @@
   .container {
     max-width: 1000px;
   }
+}
+
+.slimContainer {
+  composes: container;
+  padding: 0em 1em;
 }

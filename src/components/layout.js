@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import Header from "../components/header"
+import Nav from "../components/nav"
 
-import containerStyle from './container/container.module.css'
+import containerStyle from "./container/container.module.css"
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -12,28 +13,25 @@ const Layout = ({ location, title, children }) => {
   if (location.pathname === rootPath) {
     header = (
       <>
-      <h1
-        style={{
-          fontFamily: `Libre Caslon Text`,
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
+        <h1
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            fontFamily: `Libre Caslon Text`,
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
           }}
-          to={`/`}
         >
-          {title}
-        </Link>
-      </h1>
-      <p>
-      
-      A handbook on the things I would have otherwise forgotten.
-      </p>
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
+        <p>A handbook on the things I would have otherwise forgotten.</p>
       </>
     )
   } else {
@@ -57,18 +55,16 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-      }}
-    >
-      <Header style={{backgroundColor:'#81b29a'}}>{header}</Header>
+    <>
+    <Nav/>
+      <Header style={{ backgroundColor: "#81b29a" }}>{header}</Header>
       <main className={containerStyle.container}>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </div>
+    </>
   )
 }
 
