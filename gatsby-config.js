@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `The Build Log`,
+    title: `My Project Notebook`,
     author: {
       name: `Anton De Blasio`,
       summary: `A personal handbook for the information I would otherwise misplace`,
@@ -91,5 +91,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }

@@ -7,52 +7,46 @@ import Footer from "../components/footer"
 import containerStyle from "./container/container.module.css"
 import { rhythm, scale } from "../utils/typography"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, subject, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
   if (location.pathname === rootPath) {
     header = (
       <>
-      <h1
-        style={{
-          fontFamily: `Libre Caslon Text`,
-          fontSize:'3.5em',
-          marginBottom: '0.25em',
-          marginTop: 0,
-        }}
+        <h1
+          style={{
+            fontFamily: `Libre Caslon Text`,
+            fontSize: "3.5em",
+            marginBottom: "0.25em",
+            marginTop: 0,
+          }}
         >
           {title}
-      </h1>
-      <p style={{fontSize:'1.25em'}}>
-      
-      A handbook on the things I would have otherwise forgotten.
-      </p>
+        </h1>
+        <p style={{ fontSize: "1.25em" }}>{subject}</p>
       </>
     )
   } else {
     header = (
-      <h3
-        style={{
-          fontFamily: `Libre Caslon Text`,
-          marginTop: 0,
-        }}
-      >
-        <Link
+      <>
+        <h1
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            fontFamily: `Libre Caslon Text`,
+            fontSize: "3.5em",
+            marginBottom: "0.25em",
+            marginTop: 0,
           }}
-          to={`/`}
         >
           {title}
-        </Link>
-      </h3>
+        </h1>
+        <p style={{ fontSize: "1.25em" }}>{subject}</p>
+      </>
     )
   }
   return (
     <>
-    <Nav/>
+      <Nav />
       <Header style={{ backgroundColor: "#81b29a" }}>{header}</Header>
       <main className={containerStyle.container}>{children}</main>
       <Footer>
