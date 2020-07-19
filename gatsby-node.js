@@ -1,14 +1,35 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const pokemons = [
+    { name: "Pikachu", type: "electric" },
+    { name: "Squirtle", type: "water" },
+  ]
+  pokemons.forEach(pokemon => {
+    const node = {
+      name: pokemon.name,
+      type: pokemon.type,
+      id: createNodeId(`Pokemon-${pokemon.name}`),
+      internal: {
+        type: "Pokemon",
+        contentDigest: createContentDigest(pokemon),
+      },
+    }
+    actions.createNode(node)
+  })
+}
+
+
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage,createNode } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const result = await graphql(
     `
       {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: {regex : "\/blog/"} },
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
