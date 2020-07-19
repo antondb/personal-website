@@ -22,3 +22,26 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'recipe'
+    label: 'Recipe'
+    folder: 'content/recipes'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    editor:
+      preview: false
+    fields:
+      - { label: 'Recipe Name', name: 'name', widget: 'string' }
+      - label: 'ingredients' 
+        name: 'recipeIngredient' 
+        widget: 'list'
+        fields:
+          - {label: ingredient, name: ingredient, widget: string}
+          - {label: amount, name: amount, widget: string}
+      - { label: 'Description', name: 'recipeInstructions', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }      
+      - { label: 'Cook Time', name: 'cookTime', widget: 'string' }
+      - { label: 'Method', name: 'cookingMethod', widget: 'string' }
+      - { label: 'Food Catgory', name: 'recipeCategory', widget: 'string' }
+      - { label: 'Yield', name: 'recipeYield', widget: 'string' }
