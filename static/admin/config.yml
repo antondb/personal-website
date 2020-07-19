@@ -22,6 +22,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Recipe', widget: "relation", name: 'recipe', collection: 'recipe',  displayFields: ["name"], searchFields: ["name"], valueField: 'id'}
   - name: 'recipe'
     label: 'Recipe'
     folder: 'content/recipes'
@@ -39,8 +40,8 @@ collections:
         fields:
           - {label: ingredient, name: ingredient, widget: string}
           - {label: amount, name: amount, widget: string}
-      - { label: 'Description', name: 'recipeInstructions', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }      
+      - { label: 'Intro', name: 'intro', widget: 'markdown' }
+      - { label: 'Description', name: 'recipeInstructions', widget: 'markdown' }
       - { label: 'Cook Time', name: 'cookTime', widget: 'string' }
       - { label: 'Method', name: 'cookingMethod', widget: 'string' }
       - { label: 'Food Catgory', name: 'recipeCategory', widget: 'string' }
