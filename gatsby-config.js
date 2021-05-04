@@ -3,34 +3,35 @@ module.exports = {
     title: `My Project Notebook`,
     author: {
       name: `Anton De Blasio`,
-      summary: `A personal handbook for the information I would otherwise misplace`,
+      summary: `A personal handbook for the information I would otherwise misplace`
     },
     description: `A personal handbook for the information I would otherwise misplace`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `noe`,
-    },
+      twitter: `noe`
+    }
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },{
+        name: `blog`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/recipes`,
-        name: `recipes`,
-      },
+        name: `recipes`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
+        name: `assets`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -39,20 +40,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
+              maxWidth: 590
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
+          `gatsby-remark-smartypants`
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -60,7 +61,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -72,15 +73,15 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/icon.png`,
-      },
+        icon: `content/assets/icon.png`
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        pathToConfigModule: `src/utils/typography`
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
@@ -92,11 +93,16 @@ module.exports = {
           {
             family: `Libre Caslon Text`,
             variants: [`400`, `700`],
-            subsets: [`latin`],
-          },
-        ],
-      },
+            subsets: [`latin`]
+          }
+        ]
+      }
     },
-    `gatsby-plugin-netlify-cms`,
-  ],
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    }
+  ]
 }
